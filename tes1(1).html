@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>tes</title>
+	<style type="text/css">
+		body{
+			background-color: rgb(66, 153, 153);
+			
+		}
+
+		#formlogin{
+			position: absolute;
+    		left: 50%;
+    		top: 50%;
+			transform: translate(-50%,-50%);
+			padding: 20px 25px;
+			width: 300px;
+			text-transform: uppercase;
+			background-color: rgb(31, 159, 168);
+			box-shadow: 0 0 8px black;
+		}
+
+		.container {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		#lgn{
+			text-align: center; 
+			font-size: 25px; 
+			font-family: Arial;
+		}
+		
+		#br, #bd{
+			border: 1px solid rgba(221, 203, 203, 0.918);
+			border-radius: 40px%;
+			cursor: pointer;
+			padding: 1px;
+			background-color:rgba(221, 203, 203, 0.918);
+			float: right;
+			object-position: center;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.445);
+			height: 2px;
+		}
+		#br:hover, #bd:hover{
+			border: 5px solid rgba(102, 161, 165, 0.966);
+		}
+		.bangundatar button, .bangunruang button{
+			cursor: pointer;
+			height: 50px;
+			width: 200px;
+			border: 4px solid green;
+			margin: 10px;
+			
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="formlogin" id="formlogin">
+			<form>
+				<table>
+					<tr id="lgn">
+						<th colspan="2"> Form Login </th>
+					</tr>
+					<tr>
+						<td> <label for="username"> Username </label}> </td>
+						<td> <input type="text" name="username" id="username"> </td>
+					</tr>
+					<tr>
+						<td> <label for="password"> Password </label}> </td>
+						<td> <input type="password" name="password" id="password"> </td>
+					</tr>
+					<tr>
+						<td colspan="2" style="text-align: center;">
+							<button style="width: 100%; background-color: rgb(210, 233, 229);" type="button" onclick="login1()"> Login </button>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		<div class="home" id="home" style="display: none;">
+			<table class="tabel1" style="margin: auto;">
+				<tr >
+					<td><a style="border-width: 50px;" id="bd" onclick="kebangundatar()"> Bangun datar </a> <br><br> <br><br> <br><br><br><br></td>
+				</tr>
+				<tr>
+					<td><a style="border-width: 50px;" id="br" onclick="kebangunruang()"> Bangun ruang</a></td>
+				</tr>
+			</table>
+		</div>
+		<div class="bangundatar" id="bangundatar" style="width: 100px;display: none;">
+			<button style="width: 130px; height: 60px;" type="button" onclick="kepersegi()"> Persegi </button>
+			<button style="width: 130px; height: 60px;" type="button" onclick="kepersegipanjang()"> Persegi<br>Panjang </button>
+			<button style="width: 130px; height: 60px;" type="button" onclick="kesegitiga()"> Segitiga </button>
+			<button style="width: 130px; height: 60px;" type="button" onclick="ketrapesium()"> Trapesium </button>
+			<button style="width: 130px; height: 60px;" type="button" onclick="kejajargenjang()"> Jajargenjang </button>
+			<button style="width: 130px; height: 60px;" type="button" onclick="keketupat()"> Belah <br> Ketupat </button>
+			<br>
+			<br>
+			<button type="button" onclick="back1()"> Back </button>
+		</div>
+		<div class="bangunruang" id="bangunruang" style="width: 100px;display: none;">
+			<button style="width: 130px; height: 60px;" type="button" onclick="kebalok()"> Balok </button>
+			<button style="width: 130px; height: 60px;" type="button" onclick="kekubus()"> Kubus </button>
+			<button style="width: 130px; height: 60px;" type="button" onclick="keprismats()"> Prisma Tegak <br> Segitiga </button>
+			<button style="width: 130px; height: 60px;" type="button" onclick="kelimass()"> Limas <br> Segitiga </button>
+			<button style="width: 130px; height: 60px;" type="button" onclick="kelimasse()"> Limas <br> Segiempat </button>
+			<button style="width: 130px; height: 60px;" type="button" onclick="ketabung()"> Tabung </button>
+			<button style="width: 130px; height: 60px;" type="button" onclick="kekerucut()"> Kerucut </button>
+			<button style="width: 130px; height: 60px;" type="button" onclick="kebola()"> Bola </button>
+			<br>
+			<br>
+			<button type="button" onclick="back2()"> Back </button>
+		</div>
+		<div class="persegi" id="persegi" style="display: none;">
+			<form>
+				<table>
+					<tr>
+						<th colspan="2"> Persegi </th>
+					</tr>
+					<tr>
+						<td> <label for="sisi"> Sisi </label}> </td>
+						<td>= <input type="number" name="sisi" id="sisipersegi" placeholder="xxxx cm"> </td>
+					</tr>
+					<tr>
+						<td colspan="2" style="text-align: center;"><br>
+							<button type="button" onclick="hasilpersegi()"> Hasil </button>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		<div class="persegipanjang" id="persegipanjang" style="display: none;">
+			<form>
+				<table>
+					<tr>
+						<th colspan="2"> Persegi Panjang </th>
+					</tr>
+					<tr>
+						<td> <label for="panjangp"> Panjang </label}> </td>
+						<td>= <input type="number" name="panjangp" id="panjangp" placeholder="xxxx cm"> </td>
+					</tr>
+					<tr>
+						<td> <label for="lebar"> lebar </label}> </td>
+						<td>= <input type="number" name="lebar" id="lebarp" placeholder="xxxx cm"> </td>
+					</tr>
+					<tr>
+						<td colspan="2" style="text-align: center;"><br>
+							<button type="button" onclick="hasilpersegipanjang()"> Hasil </button>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		<div class="segitiga" id="segitiga" style="display: none;">
+			<form>
+				<table>
+					<tr>
+						<th colspan="2"> Segitiga Sama sisi</th>
+					</tr>
+					<tr>
+						<td> <label for="alass"> Alas </label}> </td>
+						<td>= <input type="number" name="alass" id="alass" placeholder="xxxx cm"> </td>
+					</tr>
+					<tr>
+						<td> <label for="tinggi"> Tinggi </label}> </td>
+						<td>= <input type="number" name="tinggi" id="tinggis" placeholder="xxxx cm"> </td>
+					</tr>
+					<tr>
+						<td colspan="2" style="text-align: center;"><br>
+							<button type="button" onclick="hasilsegitiga()"> Hasil </button>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		<div class="trapesium" id="trapesium" style="display: none;">
+			<form>
+				<table>
+					<tr>
+						<th colspan="2"> Trapesium </th>
+					</tr>
+					<tr>
+						<td> <label for="alast"> Alas A</label}> </td>
+						<td>= <input type="number" name="alast" id="alast" placeholder="xxxx cm"> </td>
+					</tr>
+					<tr>
+						<td> <label for="alastb"> Alas B</label}> </td>
+						<td>= <input type="number" name="alastb" id="alastb" placeholder="xxxx cm"> </td>
+					</tr>
+					<tr>
+						<td> <label for="tinggi"> Tinggi </label}> </td>
+						<td>= <input type="number" name="tinggit" id="tinggit" placeholder="xxxx cm"> </td>
+					</tr>
+					<tr>
+						<td colspan="2" style="text-align: center;"><br>
+							<button type="button" onclick="hasiltrapesium()"> Hasil </button>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		<div class="jajargenjang" id="jajargenjang" style="display: none;">
+			<form>
+				<table>
+					<tr>
+						<th colspan="2"> Jajargenjang </th>
+					</tr>
+					<tr>
+						<td> <label for="alasj"> Alas </label}> </td>
+						<td>= <input type="number" name="alasj" id="alasj" placeholder="xxxx cm"> </td>
+					</tr>
+					<tr>
+						<td> <label for="tinggij"> Tinggi </label}> </td>
+						<td>= <input type="number" name="tinggij" id="tinggij" placeholder="xxxx cm"> </td>
+					</tr>
+					<tr>
+						<td colspan="2" style="text-align: center;"><br>
+							<button type="button" onclick="hasiljajargenjang()"> Hasil </button>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		<div class="ketupat" id="ketupat" style="display: none;">
+			<form>
+				<table>
+					<tr>
+						<th colspan="2"> Belah Ketupat </th>
+					</tr>
+					<tr>
+						<td> <label for="d1"> D1 </label}> </td>
+						<td>= <input type="number" name="d1" id="d1" placeholder="xxxx cm"> </td>
+					</tr>
+					<tr>
+						<td> <label for="d2"> D2 </label}> </td>
+						<td>= <input type="number" name="d2" id="d2" placeholder="xxxx cm"> </td>
+					</tr>
+					<tr>
+						<td> <label for="sisi"> Sisi </label}> </td>
+						<td>= <input type="number" name="sisib" id="sisib" placeholder="xxxx cm"> </td>
+					</tr>
+					<tr>
+						<td colspan="2" style="text-align: center;"><br>
+							<button type="button" onclick="hasilketupat()"> Hasil </button>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+
+
+		<!-- Bangun Ruang -->
+		<div class="balok" id="balok" style="display: none;">
+			<form>
+				<table>
+					<tr>
+						<th colspan="2">Balok</th>
+					</tr>
+					<tr>
+						<td> <label for="panjangb"> Panjang </label}> </td>
+						<td>= <input type="number" name="panjangb" id="panjangb" placeholder="xxxx cm"> </td>
+					</tr>
+					<tr>
+						<td> <label for="lebarb"> Lebar </label}> </td>
+						<td>= <input type="number" name="lebarb" id="lebarb" placeholder="xxxx cm"> </td>
+					</tr>
+					<tr>
+						<td> <label for="tinggib"> Tinggi </label}> </td>
+						<td>= <input type="number" name="tinggib" id="tinggib" placeholder="xxxx cm"> </td>
+					</tr>
+					<tr>
+						<td colspan="colspan2" style="text-align: center;">
+							<button type="button" onclick="hasilbalok()"> Hasil </button>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		<div class="kubus" id="kubus" style="display: none;">
+			<form>
+				<table>
+					<tr>
+						<th colspan="2"> Kubus </th>
+					</tr>
+					<tr>
+						<td> <label for="sisik"> Sisi </label}> </td>
+						<td>= <input type="number" name="sisik" id="sisik" placeholder="xxxx cm"> </td>
+					</tr>
+					<tr>
+						<td colspan="colspan2" style="text-align: center;">
+							<button type="button" onclick="hasilkubus()"> Hasil </button>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		<div class="prismats" id="prismats" style="display: none;">
+			<form>
+				<table>
+					<tr>
+						<th colspan="2"> Prisma Tegak Segitiga </th>
+					</tr>
+					<tr>
+						<td> <label for="luasal"> Luas Alas </label}> </td>
+						<td>= <input type="number" name="luasal" id="luasal" placeholder="xxxx cm"> </td>
+					</tr>
+					<tr>
+						<td> <label for="tinggipts"> Tinggi </label}> </td>
+						<td>= <input type="number" name="tinggipts" id="tinggipts" placeholder="xxxx cm"> </td>
+					</tr>
+					<tr>
+						<td colspan="colspan2" style="text-align: center;">
+							<button type="button" onclick="hasilprismats()"> Hasil </button>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		<div class="limass" id="limass" style="display: none;">
+			<form>
+				<table>
+					<tr>
+						<th colspan="2"> Limas Segitiga </th>
+					</tr>
+					<tr>
+						<td> <label for="luasall"> Luas Alas </label}> </td>
+						<td>= <input type="number" name="luasall" id="luasall" placeholder="xxxx cm"> </td>
+					</tr>
+					<tr>
+						<td> <label for="tinggilimass"> Tinggi </label}> </td>
+						<td>= <input type="number" name="tinggilimass" id="tinggilimass" placeholder="xxxx cm"> </td>
+					</tr>
+					<tr>
+						<td colspan="colspan2" style="text-align: center;">
+							<button type="button" onclick="hasillimass()"> Hasil </button>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		<div class="limasse" id="limasse" style="display: none;">
+			<form>
+				<table>
+					<tr>
+						<th colspan="2"> Limas Segiempat </th>
+					</tr>
+					<tr>
+						<td> <label for="panjangli"> Panjang </label}> </td>
+						<td>= <input type="number" name="panjangli" id="panjangli" placeholder="xxxx cm"> </td>
+					</tr>
+					<tr>
+						<td> <label for="tinggili"> Tinggi </label}> </td>
+						<td>= <input type="number" name="tinggili" id="tinggili" placeholder="xxxx cm"> </td>
+					</tr>
+					<tr>
+						<td> <label for="lebarli"> Lebar </label}> </td>
+						<td>= <input type="number" name="lebarli" id="lebarli" placeholder="xxxx cm"> </td>
+					</tr>
+					<tr>
+						<td colspan="colspan2" style="text-align: center;">
+							<button type="button" onclick="hasillimasse()"> Hasil </button>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		<div class="tabung" id="tabung" style="display: none;">
+			<form>
+				<table>
+					<tr>
+						<th colspan="2"> Tabung </th>
+					</tr>
+					<tr>
+						<td> <label for="jarit"> Jari-jari </label}> </td>
+						<td>= <input type="number" name="jarit" id="jarit" placeholder="xxxx cm"> </td>
+					</tr>
+					<tr>
+						<td> <label for="tinggita"> Tinggi </label}> </td>
+						<td>= <input type="number" name="tinggita" id="tinggita" placeholder="xxxx cm"> </td>
+					</tr>
+					<tr>
+						<td colspan="colspan2" style="text-align: center;">
+							<button type="button" onclick="hasiltabung()"> Hasil </button>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		<div class="kerucut" id="kerucut" style="display: none;">
+			<form>
+				<table>
+					<tr>
+						<th colspan="2"> Kerucut </th>
+					</tr>
+					<tr>
+						<td> <label for="jarik"> Jari-jari </label}> </td>
+						<td>= <input type="number" name="jarik" id="jarik" placeholder="xxxx cm"> </td>
+					</tr>
+					<tr>
+						<td> <label for="tinggike"> Tinggi </label}> </td>
+						<td>= <input type="number" name="tinggike" id="tinggike" placeholder="xxxx cm"> </td>
+					</tr>
+					<tr>
+						<td colspan="colspan2" style="text-align: center;">
+							<button type="button" onclick="hasilkerucut()"> Hasil </button>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		<div class="bola" id="bola" style="display: none;">
+			<form>
+				<table>
+					<tr>
+						<th colspan="2"> Bola </th>
+					</tr>
+					<tr>
+						<td> <label for="jarib"> Jari-jari </label}> </td>
+						<td>= <input type="number" name="jarib" id="jarib" placeholder="xxxx cm"> </td>
+					</tr>
+					<tr>
+						<td colspan="colspan2" style="text-align: center;">
+							<button type="button" onclick="hasilbola()"> Hasil </button>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+
+
+		<!-- Hasil Bangun datar -->
+		<div class="hasil" id="hasil" style="display: none;">
+			<table>
+				<tr>
+					<td> Luas </td>
+					<td id="hasilluas"> ... </td>
+				</tr>
+				<tr>
+					<td> Keliling </td>
+					<td id="hasilkeliling"> ... </td>
+				</tr>
+				<tr>
+					<td> <button type="button" onclick="back()"> Back </button>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<!-- hasil bangun ruang -->
+		<div class="hasil2" id="hasil2" style="display: none;">
+			<table>
+				<tr>
+					<td> Volume </td>
+					<td id="hasilvolume"> ... </td>
+				</tr>
+				<tr>
+					<td> <button type="button" onclick="back22()"> Back </button>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+
+
+
+
+	<script type="text/javascript">
+		var bangundatar = document.getElementById('bangundatar');
+		var bangunruang = document.getElementById('bangunruang');
+		function back(){
+			document.getElementById('hasil').style.display = "none";
+			bangundatar.style.display = "block";
+		}
+
+		function back22(){
+			document.getElementById('hasil2').style.display = "none";
+			bangunruang.style.display = "block";
+		}
+
+		function back1(){
+			document.getElementById('bangundatar').style.display = "none";
+			document.getElementById('home').style.display = "block";
+		}
+
+		function back2(){
+			document.getElementById('bangunruang').style.display = "none";
+			document.getElementById('home').style.display = "block";
+		}
+
+		function kebangundatar(){
+			document.getElementById('home').style.display = "none";
+			document.getElementById('bangundatar').style.display = "block";
+		}
+
+		function kebangunruang(){
+			document.getElementById('home').style.display = "none";
+			document.getElementById('bangunruang').style.display = "block";
+		}
+
+		function login1(){
+			var nama = document.getElementById('username').value;
+			var password = document.getElementById('password').value;
+
+			if (nama == '' || password == ''){
+				window.alert("masukan tidak boleh kosong!");
+			}else if (nama == "lutfia" && password == "user" || nama == "fahmi" && password == "user" || nama == "hasna" && password == "user" || nama == "ari" && password == "user"){
+				document.getElementById('formlogin').style.display = "none";
+				document.getElementById('home').style.display = "block";
+			} else {
+				window.alert("salah");
+			}
+		}
+
+	// Persegi
+		function hasilpersegi(){
+			var sisi = document.getElementById('sisipersegi').value;
+			var luas = sisi * sisi;
+			var keliling = 4 * sisi;
+			document.getElementById('hasilluas').innerHTML = "= " + luas + " cm";
+			document.getElementById('hasilkeliling').innerHTML = "= " + keliling + " cm";
+			document.getElementById('persegi').style.display = "none";
+			document.getElementById('hasil').style.display = "block";
+		}
+		function kepersegi(){
+			bangundatar.style.display = "none"
+			document.getElementById('persegi').style.display = "block";
+		}
+
+	// Persegi Panjang
+		function hasilpersegipanjang(){
+			var panjang = parseFloat(document.getElementById('panjangp').value);
+			var lebar = parseFloat(document.getElementById('lebarp').value);
+			var luasp = panjang * lebar;
+			var kelilingp = 2 * (panjang + lebar) ;
+			document.getElementById('hasilluas').innerHTML = "= " + luasp + " cm";
+			document.getElementById('hasilkeliling').innerHTML = "= " + kelilingp + " cm";
+			document.getElementById('persegipanjang').style.display = "none";
+			document.getElementById('hasil').style.display = "block";
+
+		}
+		function kepersegipanjang(){
+			bangundatar.style.display = "none"
+			document.getElementById('persegipanjang').style.display = "block";
+		}
+
+	// segitiga
+		function hasilsegitiga(){
+			var alas = document.getElementById('alass').value;
+			var tinggi = document.getElementById('tinggis').value;
+			var luass = 0.5 * alas * tinggi;
+			var kelilings = 3 * alas ; 
+			document.getElementById('hasilluas').innerHTML = "= " + luass + " cm";
+			document.getElementById('hasilkeliling').innerHTML = "= " + kelilings + " cm";
+			document.getElementById('segitiga').style.display = "none";
+			document.getElementById('hasil').style.display = "block";
+
+		}
+		function kesegitiga(){
+			bangundatar.style.display = "none"
+			document.getElementById('segitiga').style.display = "block";
+		}
+
+	// Trapesium
+		function hasiltrapesium(){
+			var alasa = parseFloat(document.getElementById('alast').value);
+			var alasb = parseFloat(document.getElementById('alastb').value);
+			var tinggi = parseFloat(document.getElementById('tinggit').value);
+			var luast = 0.5 * (alasa + alasb) * tinggi;
+			var kelilingt = "belum";
+			document.getElementById('hasilluas').innerHTML = "= " + luast + " cm";
+			document.getElementById('hasilkeliling').innerHTML = "= " + kelilingt + " cm";
+			document.getElementById('trapesium').style.display = "none";
+			document.getElementById('hasil').style.display = "block";
+
+		}
+		function ketrapesium(){
+			bangundatar.style.display = "none"
+			document.getElementById('trapesium').style.display = "block";
+		}
+
+	// jajargenjang
+		function hasiljajargenjang(){
+			var alas = parseFloat(document.getElementById('alasj').value);
+			var tinggi = parseFloat(document.getElementById('tinggij').value);
+			var luasj = alas * tinggi;
+			var kelilingj = "belum";
+			document.getElementById('hasilluas').innerHTML = "= " + luasj + " cm";
+			document.getElementById('hasilkeliling').innerHTML = "= " + kelilingj + " cm";
+			document.getElementById('jajargenjang').style.display = "none";
+			document.getElementById('hasil').style.display = "block";
+
+		}
+		function kejajargenjang(){
+			bangundatar.style.display = "none"
+			document.getElementById('jajargenjang').style.display = "block";
+		}
+
+	// belah ketupat 
+		function hasilketupat(){
+			var d1 = parseFloat(document.getElementById('d1').value);
+			var d2 = parseFloat(document.getElementById('d2').value);
+			var sisi = parseFloat(document.getElementById('sisib').value);
+			var luasb = 0.5 * d1 * d2;
+			var kelilingb = 4 * sisi;
+			document.getElementById('hasilluas').innerHTML = "= " + luasb + " cm";
+			document.getElementById('hasilkeliling').innerHTML = "= " + kelilingb + " cm";
+			document.getElementById('ketupat').style.display = "none";
+			document.getElementById('hasil').style.display = "block";
+
+		}
+		function keketupat(){
+			bangundatar.style.display = "none"
+			document.getElementById('ketupat').style.display = "block";
+		}
+
+
+	// BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+	// Balok
+		function hasilbalok(){
+			var panjang = parseFloat(document.getElementById('panjangb').value);
+			var lebar = parseFloat(document.getElementById('lebarb').value);
+			var tinggi = parseFloat(document.getElementById('tinggib').value);
+			var volume = panjang * lebar * tinggi;
+			document.getElementById('hasilvolume').innerHTML = "= " + volume + " cm";
+			document.getElementById('balok').style.display= "none";
+			document.getElementById('hasil2').style.display = "block";
+		}
+		function kebalok(){
+			bangunruang.style.display = "none";
+			document.getElementById('balok').style.display = "block";
+		}
+
+	// kubus
+		function hasilkubus(){
+			var sisi = parseFloat(document.getElementById('sisik').value);
+			var volume = sisi * sisi * sisi;
+			document.getElementById('hasilvolume').innerHTML = "= " + volume + " cm";
+			document.getElementById('kubus').style.display= "none";
+			document.getElementById('hasil2').style.display = "block";
+		}
+		function kekubus(){
+			bangunruang.style.display = "none";
+			document.getElementById('kubus').style.display = "block";
+		}
+
+	//primas tegas segitiga
+		function hasilprismats(){
+			var luas = parseFloat(document.getElementById('luasal').value);
+			var tinggi = parseFloat(document.getElementById('tinggipts').value);
+			var volume = luas * tinggi;
+			document.getElementById('hasilvolume').innerHTML = "= " + volume + " cm";
+			document.getElementById('prismats').style.display= "none";
+			document.getElementById('hasil2').style.display = "block";
+		}
+		function keprismats(){
+			bangunruang.style.display = "none";
+			document.getElementById('prismats').style.display = "block";
+		} 
+
+	// limas segitiga
+		function hasillimass(){
+			var luas = parseFloat(document.getElementById('luasall').value);
+			var tinggi = parseFloat(document.getElementById('tinggilimass').value);
+			var volume = 1/3 * luas * tinggi;
+			document.getElementById('hasilvolume').innerHTML = "= " + volume + " cm";
+			document.getElementById('limass').style.display= "none";
+			document.getElementById('hasil2').style.display = "block";
+		}
+		function kelimass(){
+			bangunruang.style.display = "none";
+			document.getElementById('limass').style.display = "block";
+		}
+
+	// Limas Segi empat
+		function hasillimasse(){
+			var panjang = parseFloat(document.getElementById('panjangli').value);
+			var lebar = parseFloat(document.getElementById('lebarli').value);
+			var tinggi = parseFloat(document.getElementById('tinggili').value);
+			var volume = 1/3 * panjang * lebar *tinggi;
+			document.getElementById('hasilvolume').innerHTML = "= " + volume + " cm";
+			document.getElementById('limasse').style.display= "none";
+			document.getElementById('hasil2').style.display = "block";
+		}
+		function kelimasse(){
+			bangunruang.style.display = "none";
+			document.getElementById('limasse').style.display = "block";
+		}  
+
+	// tabung
+		function hasiltabung(){
+			var jari = parseFloat(document.getElementById('jarit').value);
+			var tinggi = parseFloat(document.getElementById('tinggita').value);
+			var volume = 3.14 * jari * jari * tinggi;
+			document.getElementById('hasilvolume').innerHTML = "= " + volume + " cm";
+			document.getElementById('tabung').style.display= "none";
+			document.getElementById('hasil2').style.display = "block";
+		}
+		function ketabung(){
+			bangunruang.style.display = "none";
+			document.getElementById('tabung').style.display = "block";
+		} 
+
+	// kerucut
+		function hasilkerucut(){
+			var jari = parseFloat(document.getElementById('jarik').value);
+			var tinggi = parseFloat(document.getElementById('tinggike').value);
+			var volume = 1/3 * 3.14 * jari * jari * tinggi;
+			document.getElementById('hasilvolume').innerHTML = "= " + volume + " cm";
+			document.getElementById('kerucut').style.display= "none";
+			document.getElementById('hasil2').style.display = "block";
+		}
+		function kekerucut(){
+			bangunruang.style.display = "none";
+			document.getElementById('kerucut').style.display = "block";
+		} 
+
+	// bola
+		function hasilbola(){
+			var jari = parseFloat(document.getElementById('jarib').value);
+			var volume = 4/3 * 3.14 * jari * jari * jari;
+			document.getElementById('hasilvolume').innerHTML = "= " + volume + " cm";
+			document.getElementById('bola').style.display= "none";
+			document.getElementById('hasil2').style.display = "block";
+		}
+		function kebola(){
+			bangunruang.style.display = "none";
+			document.getElementById('bola').style.display = "block";
+		} 
+	</script>
+	</div>
+</body>
+</html>
